@@ -1,4 +1,1 @@
 .env
-model/catboost_info
-model/logs.logs
-model/data.csv
