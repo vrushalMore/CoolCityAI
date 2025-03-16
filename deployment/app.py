@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 # Load the trained model
-model = joblib.load("../model/best_cloud_seeding_model.pkl")
+model = joblib.load("deployment/best_cloud_seeding_model.pkl")
 
 # Mapping user inputs to numerical values
 mapping = {
