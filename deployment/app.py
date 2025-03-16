@@ -3,9 +3,8 @@ import joblib
 import numpy as np
 import pandas as pd
 
-import os
-model_path = os.path.abspath("best_cloud_seeding_model.pkl")
-model = joblib.load(model_path)
+# Load the trained model
+model = joblib.load("deployment/best_cloud_seeding_model.pkl")
 
 # Mapping user inputs to numerical values
 mapping = {
