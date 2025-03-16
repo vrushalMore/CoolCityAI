@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+streamlit
+pandas
+numpy
+scikit-learn
+tensorflow
+matplotlib
+plotly
+requests
+google-earthengine-api
+twilio
+geopandas
+folium
