@@ -1,14 +1,25 @@
 import pandas as pd
-from pycaret.classification import setup, compare_models, save_model
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+import joblib
 
-# Load the dataset
-df = pd.read_csv("data.csv")  # Make sure the correct path is used
+df = pd.read_csv("data.csv")
 
-# Initialize PyCaret for binary classification
-clf_setup = setup(df, target="cloud_seeding", session_id=42, normalize=True)
+X = df.drop(columns=["cloud_seeding"])
+y = df["cloud_seeding"]
 
-# Train multiple models and select the best one
-best_model = compare_models()
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Save the best model in .pkl format
-save_model(best_model, "best_cloud_seeding_model")
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+model = RandomForestClassifier(random_state=42)
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+
+joblib.dump(model, "model.pkl")

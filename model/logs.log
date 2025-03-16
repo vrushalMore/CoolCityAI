@@ -1582,3 +1582,11 @@ AssertionError
                                objective='binary:logistic', ...))],
          verbose=False)
 2025-03-16 05:54:35,231:INFO:save_model() successfully completed......................................
+2025-03-16 11:04:47,866:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-03-16 11:04:47,867:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-03-16 11:04:47,867:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-03-16 11:04:47,867:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
